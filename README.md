@@ -10,3 +10,4 @@ Tous les jeux de données ont été utilisés à partir de kaggle.
 
 # Auteur
 
+[Nyam](https://github.com/skyclanlourro)
