@@ -1,0 +1,93 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="row" style="margin-bottom: 800px;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <center><h1>Prédiction de Maladie Cardiovasculaire</h1></center>
+        <div class="card card-body" style="border: 1px solid black; box-shadow: 0 0 10px black;">
+            <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="age" placeholder="Âge">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="sex" placeholder="Sexe (Homme : 1, Femme: 0)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="cp" placeholder="Type de douleur thoracique"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="trestbps" placeholder="Pression artérielle au repos en mm Hg">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="chol" placeholder="Cholestérol sérique en mg/dl">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="fbs" placeholder="Glycémie à jeun 120 mg/dl (1 = vrai ; 0 = faux)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="restecg" placeholder="Résultats électrocardiographiques au repos">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="thalach" placeholder="Fréquence cardiaque maximale atteinte">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="exang" placeholder="Angor induit par l'effort (1 = oui ; 0 = non)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="oldpeak" placeholder="Dépression du segment ST induite par l'exercice par rapport au repos">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="slope" placeholder="La pente du segment ST d'exercice maximal">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="ca" placeholder="Nombre de vaisseaux principaux (0-3) colorés par fluoroscopie">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="thal" placeholder="3 = normal; 6 = défaut corrigé; 7 = défaut réversible">
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <input type="submit" class="btn btn-info btn-block" value="Prédire" style="margin:0px auto; display:block;">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+{% endblock %}

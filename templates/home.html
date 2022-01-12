@@ -1,0 +1,119 @@
+{% extends 'main.html' %}
+{% block content %}
+{% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endif %}
+    
+<div class="container">
+      <div class="card bg-dark text-white">
+        <img class="card-img" src="{{ url_for('static', filename = 'images/logo1.png') }}" alt="Card image">
+        <div class="card-img-overlay">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text">Last updated 3 mins ago</p>
+        </div>
+      </div>
+
+    <div class="card card-body" style="border: 1px solid rgb(112, 111, 111); box-shadow: 0 0 10px black;">
+        <h2>Il s'agit d'une application Web basée sur le Machine Learning  et le Deep learning.</h2>
+        <p>Ces modèles de Machine Learning et Deep Learning sont entraînés sur de grands ensembles de données et des milliers d'images.</p>
+        <br>
+        <h2>Précisions des modèles :</h2>
+        <ul>
+            <li>Modèle Diabète: <strong>98.25%</strong></li>
+            <li>Modèle Cancer du sein: <strong>98.25%</strong></li>
+            <li>Modèle Maladie Cardiovasculaire: <strong>85.25%</strong></li>
+            <li>Modèle Maladie Reinale: <strong>99%</strong></li>
+            <li>Modèle Maladie du foie: <strong>78%</strong></li>
+            <li>Modèle Paludisme: <strong>96%</strong></li>
+            <li>Modèle Pneumonie: <strong>95%</strong></li>
+        </ul>
+        <br>
+        <h3>Informations sur les maladies que ce site peut prédire.</h3>
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
+                <h4>Diabète</h4>
+                <p>Le diabète est une maladie qui survient lorsque votre glycémie, également appelée glycémie, est trop élevée. La glycémie est votre principale source d'énergie et provient de la nourriture que vous mangez. L'insuline, une hormone produite par le pancréas, aide le glucose provenant des aliments à pénétrer dans vos cellules pour être utilisé comme énergie. Parfois, votre corps ne produit pas assez ou pas d'insuline ou n'utilise pas bien l'insuline. Le glucose reste alors dans votre sang et n'atteint pas vos cellules.</p>
+                <h5>Symptômes</h5>
+                <ul>
+                    <li>Uriner souvent.</li>
+                    <li>Avoir très soif.</li>
+                    <li>Extrême fatigue.</li>
+                    <li>Vision floue.</li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
+                <h4>Cancer du Sein</h4>
+                <p>Le cancer du sein est un cancer qui se forme dans les cellules de la poitrine.
+
+                    Après le cancer de la peau, le cancer du sein est le cancer le plus fréquemment diagnostiqué chez les femmes. Le cancer du sein peut survenir aussi bien chez les hommes que chez les femmes, mais il est beaucoup plus fréquent chez les femmes.</p>
+                <h5>Symptômes</h5>
+                <ul>
+                    <li>Une grosseur ou un épaississement mammaire qui se sent différent du tissu environnant.</li>
+                    <li>Modification de la taille, de la forme ou de l'apparence d'un sein.</li>
+                    <li>Modifications de la peau du sein, telles que des capitons.</li>
+                    <li>Rougeur ou piqûres de la peau sur le sein, comme la peau d'une orange.</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
+                <h4>Maladie Rénale</h4>
+                <p>La maladie rénale chronique, également appelée insuffisance rénale chronique, décrit la perte progressive de la fonction rénale. Vos reins filtrent les déchets et l'excès de liquide de votre sang, qui sont ensuite excrétés dans votre urine. Lorsque la maladie rénale chronique atteint un stade avancé, des niveaux dangereux de liquide, d'électrolytes et de déchets peuvent s'accumuler dans votre corps.</p>
+                <h5>Symptômes</h5>
+                <ul>
+                    <li>Nausée.</li>
+                    <li>Vomit.</li>
+                    <li>Fatigue, se sent faible.</li>
+                    <li>Contractions musculaires et crampes.</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
+                <h4>Maladie du Foie</h4>
+                <p>Les symptômes d'une maladie du foie peuvent varier, mais ils comprennent souvent un gonflement de l'abdomen et des jambes, des ecchymoses facilement, des changements de couleur des selles et de l'urine, et une jaunisse ou un jaunissement de la peau et des yeux. Parfois, il n'y a pas de symptômes. Des tests tels que des tests d'imagerie et des tests de la fonction hépatique peuvent vérifier les dommages au foie et aider à diagnostiquer les maladies du foie.</p>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
+                <h4>Paludisme</h4>
+                <p>Le paludisme est une maladie infectieuse transmise par les moustiques qui affecte les humains et d'autres animaux. Le paludisme provoque des symptômes qui incluent généralement de la fièvre, de la fatigue, des vomissements et des maux de tête. Dans les cas graves, il peut provoquer un jaunissement de la peau, des convulsions, un coma ou la mort. Les symptômes commencent généralement dix à quinze jours après avoir été piqué par un moustique infecté. Si elles ne sont pas correctement traitées, les personnes peuvent avoir des récidives de la maladie des mois plus tard.</p>
+                <h5>Symptômes</h5>
+                <ul>
+                    <li>Fièvre. C'est le symptôme le plus courant.</li>
+                    <li>Frissons.</li>
+                    <li>Maux de tête.</li>
+                    <li>Nausée et vomissements.</li>
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 card card-body" style="box-shadow: 0 0 5px black; margin: 5px;">
+                <h4>Pneumonie</h4>
+                <p>La pneumonie est une infection qui enflamme les sacs aériens dans un ou les deux poumons. Les sacs aériens peuvent se remplir de liquide ou de pus (matière purulente), provoquant une toux accompagnée de mucosités ou de pus, de la fièvre, des frissons et des difficultés respiratoires. Une variété d'organismes, y compris des bactéries, des virus et des champignons, peuvent provoquer une pneumonie.</p>
+                <h5>Symptômes</h5>
+                <ul>
+                    <li>Toux, qui peut produire du mucus verdâtre, jaune ou même sanglant.</li>
+                    <li>Fièvre, sueurs et frissons.</li>
+                    <li>Essoufflement.</li>
+                    <li>Respiration rapide et superficielle.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

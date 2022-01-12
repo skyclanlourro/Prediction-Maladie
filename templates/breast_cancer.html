@@ -1,0 +1,173 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="row" style="margin-bottom: 610px;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <center><h1>Prédiction Cancer du Sein</h1></center>
+        <div class="card card-body" style="border: 1px solid black;">
+            <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="radius_mean" placeholder="Rayon moyen">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="texture_mean" placeholder="Texture moyenne">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="perimeter_mean" placeholder="Périmètre moyen">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="area_mean" placeholder="Moyenne de zone">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="smoothness_mean" placeholder="Moyenne douceur">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="compactness_mean" placeholder="Compacité moyenne">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="concavity_mean" placeholder="Concavité moyenne">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="concave_points_mean" placeholder="Points concave">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="symmetry_mean" placeholder="Symétrie moyenne">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="radius_se" placeholder="Rayon se">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="perimeter_se" placeholder="Périmètre se">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="area_se" placeholder="Zone se">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="compactness_se" placeholder="Compacité se">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="concavity_se" placeholder="Concavité se">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="concave_points_se" placeholder="Points concave se">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="fractal_dimension_se" placeholder="Dimension fractale se">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="radius_worst" placeholder="Pire rayon">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="texture_worst" placeholder="Pire texture">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="perimeter_worst" placeholder="Pire périmètre">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="area_worst" placeholder="Pire zone">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="smoothness_worst" placeholder="Pire Douceur">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="compactness_worst" placeholder="Pire compacité">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="concavity_worst" placeholder=" Pire concavité">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="concave_points_worst" placeholder="Pire points concave">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="symmetry_worst" placeholder="Pire symétrie">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="fractal_dimension_worst" placeholder="Pire dimension fractale">
+                        </div>
+                    </div>
+                </div>
+                
+
+                <input type="submit" class="btn btn-info btn-block" value="Prédire" style="margin:0px auto; display:block;">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% endblock %}

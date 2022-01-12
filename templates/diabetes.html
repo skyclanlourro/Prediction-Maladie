@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% block content %}
+{% if message %}
+
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endif %}
+    
+    <div class="row" style="margin-bottom: 660px;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <center><h1>Prédiction de Diabète</h1></center>
+            <div class="card card-body" style="border: 1px solid black; box-shadow: 0 0 10px black;">
+                <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                    <div class="form-group">
+                        <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="pregnancies" placeholder="Nombre d'enfant i.e. 0">
+                    </div>
+                    
+            		<div class="form-group">
+                        <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="glucose" placeholder="Taux de Glucose (mg/dL) i.e. 80">
+                    </div>
+            		<div class="form-group">
+                        <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="bloodpressure" placeholder="Pression artérielle (mmHg) i.e. 80">
+                    </div>
+            		<div class="form-group">
+                        <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="skinthickness" placeholder="Épaisseur de la peau au niveau des triceps (mm) i.e. 20">
+                    </div>
+            		<div class="form-group">
+                        <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="insulin" placeholder="Niveau d'insuline (IU/mL) i.e. 80">
+                    </div>
+            		<div class="form-group">
+                        <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="bmi" placeholder="Indice de masse corporelle (kg/m²) i.e. 23.1">
+                    </div>
+            		<div class="form-group">
+                        <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="dpf" placeholder="Diabetes Pedigree Function i.e. 0.52">
+                    </div>
+            		<div class="form-group">
+                        <input style="border: 1px solid black; margin:0 0 10px 0;" class="form-control" type="text" name="age" placeholder="Âge (année) i.e. 34">
+                    </div>
+
+            		<input type="submit" class="btn btn-info btn-block" value="Prédire" style="margin:0px auto; display:block;">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+{% endblock %}
