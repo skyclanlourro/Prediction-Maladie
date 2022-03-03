@@ -28,7 +28,7 @@ Cette application Web a été développée à l'aide de Flask et a été déploy
 ## NOTE
 
 ==> Vous pouvez accéder au site ici : ? <br>
-==> Vous pouvez trouver tous les modèles dans[models](https://github.com/skyclanlourro/Prediction-Maladie/tree/master/models) folder.
+==> Vous pouvez trouver tous les modèles dans [models](https://github.com/skyclanlourro/Prediction-Maladie/tree/master/models) folder.
 
 ## Étapes pour exécuter cette application dans votre système
 
